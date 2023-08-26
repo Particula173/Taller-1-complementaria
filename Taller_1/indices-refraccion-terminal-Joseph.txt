@@ -1,3 +1,29 @@
 touch indices-refraccion-terminal-Joseph.txt
 awk -F ","  '{print $3}' 'c:/Users/joli1/OneDrive/Escritorio/Metodos computacionales/Taller 1/Taller-1-complementaria/Taller_1/indices_refraccion.csv'>'c:/Users/joli1/OneDrive/Escritorio/Metodos computacionales/Taller 1/Taller-1-complementaria/Taller_1/Materiales.txt'
 touch Materiales.txt
+awk -F "," '{system("mkdir \"" $1 "\"")}' 'c:/Users/joli1/OneDrive/Escritorio/Metodos computacionales/Taller 1/Taller-1-complementaria/Taller_1/indices_refraccion.csv'
+cd Vidrio/
+awk -F "," '$1=="Vidrio" {system("wget \"" $4 "\"")}' "c:/Users/joli1/OneDrive/Escritorio/Metodos computacionales/Taller 1/Taller-1-complementaria/Taller_1/indices_refraccion.csv"
+cd ..
+cd 'c:/Users/joli1/OneDrive/Escritorio/Metodos computacionales/Taller 1/Taller-1-complementaria/Taller_1/Materia Inorgánica'
+awk -F "," '$1=="Materia Inorgánica" {system("wget \"" $4 "\"")}' "c:/Users/joli1/OneDrive/Escritorio/Metodos computacionales/Taller 1/Taller-1-complementaria/Taller_1/indices_refraccion.csv"
+cd ..
+cd 'c:/Users/joli1/OneDrive/Escritorio/Metodos computacionales/Taller 1/Taller-1-complementaria/Taller_1/Materia Orgánica'
+awk -F "," '$1=="Materia Orgánica" {system("wget \"" $4 "\"")}' "c:/Users/joli1/OneDrive/Escritorio/Metodos computacionales/Taller 1/Taller-1-complementaria/Taller_1/indices_refraccion.csv"
+cd ..
+cd Plásticos\ Comerciales/
+awk -F "," '$1=="Plásticos Comerciales" {system("wget \"" $4 "\"")}' "c:/Users/joli1/OneDrive/Escritorio/Metodos computacionales/Taller 1/Taller-1-complementaria/Taller_1/indices_refraccion.csv"
+cd ..
+cd Exotico/
+awk -F "," '$1=="Exotico" {system("wget \"" $4 "\"")}' "c:/Users/joli1/OneDrive/Escritorio/Metodos computacionales/Taller 1/Taller-1-complementaria/Taller_1/indices_refraccion.csv"
+cd ..
+cd Combustible/
+awk -F "," '$1=="Combustible" {system("wget \"" $4 "\"")}' "c:/Users/joli1/OneDrive/Escritorio/Metodos computacionales/Taller 1/Taller-1-complementaria/Taller_1/indices_refraccion.csv"
+cd..
+cd Mezclas/
+awk -F "," '$1=="Mezclas" {system("wget \"" $4 "\"")}' "c:/Users/joli1/OneDrive/Escritorio/Metodos computacionales/Taller 1/Taller-1-complementaria/Taller_1/indices_refraccion.csv"
+cd ..
+cd Adhesivos\ Ópticos/
+awk -F "," '$1=="Adhesivos Ópticos" {system("wget \"" $4 "\"")}' "c:/Users/joli1/OneDrive/Escritorio/Metodos computacionales/Taller 1/Taller-1-complementaria/Taller_1/indices_refraccion.csv"
+cd ..
+mkdir indices_refraccion.py

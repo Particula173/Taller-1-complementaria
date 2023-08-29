@@ -4,8 +4,9 @@ def creacion_de_lista_de_tuplas(ruta:str)->list:
     centi=True
     while centi:
         linea= archivo.readline()    
-        if linea =="    data: |":
+        if "data: |"in linea:
             centi=False
+            linea= archivo.readline()
             while linea !="":
                 valores_en_lista=linea.split(" ")
                 e=0
@@ -16,8 +17,10 @@ def creacion_de_lista_de_tuplas(ruta:str)->list:
                 valores=tuple(valores_en_lista)
                 lista.append(valores) 
                 linea= archivo.readline()
+        elif linea=="":
+            centi=False
     archivo.close()
     return lista
 
-a="Taller_1\\Exotico\\Valentine.yml"
+a="Taller_1\\Materia Inorgánica\\Bond.yml"
 print(creacion_de_lista_de_tuplas(a))

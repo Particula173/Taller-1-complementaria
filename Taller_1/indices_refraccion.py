@@ -33,7 +33,7 @@ def grafica(ruta)->None:
     lis=creacion_de_lista_de_tuplas(ruta)
     x=[]
     y=[]
-    nom=nombre_material(ruta)
+    lis_nom=nombre_material(ruta)
     for i in lis:
         x.append(i[0])
         y.append(i[1])
@@ -42,15 +42,23 @@ def grafica(ruta)->None:
     promedio_n=round(np.mean(y),4)
     desv_est=round(np.std(y),4)
     plt.plot(x,y)
-    plt.title(nom+"\n n promedio:"+str(promedio_n)+" desviacion:"+str(desv_est))
+    plt.title(lis_nom[0]+": "+lis_nom[1]+"\n n promedio:"+str(promedio_n)+" desviacion:"+str(desv_est))
     plt.xlabel("$\lambda$")
     plt.ylabel("indice de refraccion n")
+    
+    ruta_resultados = lis_nom[2]+'/' +lis_nom[0]+ "/"
+    nombre_archivo = 'grafica de '+lis_nom[1]+'.png'
+    ruta_completa = ruta_resultados + nombre_archivo
+    plt.savefig(ruta_completa)
     plt.show()
     
-def nombre_material(texto)->str:
+    
+def nombre_material(texto)->list:
+    lista=[]
     l_arch=texto.split("\\")
     mat=l_arch[2].split(".yml")[0]
-    
-    nom_arch=l_arch[1]+": "+mat
-    return nom_arch
+    lista.append(l_arch[1])
+    lista.append(mat)
+    lista.append(l_arch[0])
+    return lista
 grafica(a)

@@ -78,6 +78,7 @@ def funcion_final_graficacion(ruta:str)->None:
         ult=i.replace("\n", "")
         texto_final=texto+ult
         grafica(texto_final)
+        plt.figure()
     archivo.close()
     
 
@@ -90,14 +91,18 @@ f="Taller_1\\Materia.Orgánica.txt"
 g="Taller_1\\Plásticos.Comerciales.txt"
 h="Taller_1\\Vidrio.txt"
 
-"""
+
 funcion_final_graficacion(a)
 funcion_final_graficacion(b)
 funcion_final_graficacion(c)
 funcion_final_graficacion(d)
 funcion_final_graficacion(e)
 funcion_final_graficacion(f)
-funcion_final_graficacion(g)
+
+
+
+#funcion_final_graficacion(g)
+
 funcion_final_graficacion(h)
-"""
+
     

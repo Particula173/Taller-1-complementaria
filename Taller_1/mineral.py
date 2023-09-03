@@ -1,9 +1,10 @@
+import matplotlib.pyplot as plt
 class Mineral:
     def __init__(self, Nombre, Dureza, Lustre, Rompimiento_por_Fractura, Color, Composicion, Specific_Gravity , Sistema_Cristalino) -> None:
         self.Nombre = Nombre
         self.Dureza = Dureza
         self.Lustre = Lustre
-        self.Rompimiento_por_FRactura = Rompimiento_por_Fractura
+        self.Rompimiento_por_Fractura = Rompimiento_por_Fractura
         self.Color = Color
         self.Composicion = Composicion
         self.Sistema_Cristalino = Sistema_Cristalino
@@ -14,8 +15,14 @@ class Mineral:
         else:
             print("El mineral", self.Nombre, "no es un Silicato")
     def Densidad (self):
-        
-    
-        
-material = Mineral("j",6,7,True,"r","c","a",12)
-material.Es_Silicato()
+        Densidad = (self.Specific_Gravity)*1000
+        print("La densidad de el objeto es de", Densidad, "Kg/m^3")
+    def Color_del_Material (self):
+        plt.figure(facecolor=self.Color)
+        plt.show()
+    def Caracteristicas (self):
+        if self.Rompimiento_por_Fractura == False:
+            Type = ";No se rompe por fractura"
+        else:
+            Type = ";Se rompe por fractura"
+        print("La dureza del material es", self.Dureza, Type,";Sus atomos estan organizados siguiendo un tipo", self.Sistema_Cristalino)

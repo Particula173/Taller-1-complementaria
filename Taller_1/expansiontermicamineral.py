@@ -21,13 +21,14 @@ class Expansion_Termica_mineral(mineral.Mineral):
     def graficar (self):
         T=list(self.Temperaturas)
         alpha=list(self.Coeficientes)
+        al=sum(alpha)/len(alpha)
         temp=len(list(T))-1
         temp_1=len(list(alpha))-1
+        if self.Nombre == "grafito":
+            err=((3e**-5)-(al))/(3e**-5)
+        print(err)
         X=np.linspace(T[0],T[temp],100)
         Y=np.linspace(alpha[1],alpha[temp_1],100)
+        print(al)
         plt.plot(X,Y)
         plt.show()
-               
-a=Expansion_Termica_mineral("Hola", "f",1,2,3,4,5,6,"Taller_1/graphite_mceligot_2016.csv" )
-a.Derivada_central()
-a.graficar()

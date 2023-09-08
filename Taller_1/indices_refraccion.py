@@ -62,8 +62,6 @@ def nombre_material(texto)->list:
     lista.append(l_arch[0])
     return lista
 
-a="Taller_1\\Materia Inorgánica\\Bond.yml"
-
 
 def funcion_final_graficacion(ruta:str)->None:
     nom_a=ruta.split(".")
@@ -92,17 +90,13 @@ g="Taller_1\\Plásticos.Comerciales.txt"
 h="Taller_1\\Vidrio.txt"
 
 
-funcion_final_graficacion(a)
+#funcion_final_graficacion(a)
+
 funcion_final_graficacion(b)
 funcion_final_graficacion(c)
 funcion_final_graficacion(d)
 funcion_final_graficacion(e)
 funcion_final_graficacion(f)
-
-
-
-#funcion_final_graficacion(g)
-
+funcion_final_graficacion(g)
 funcion_final_graficacion(h)
-
     

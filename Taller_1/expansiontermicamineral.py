@@ -24,9 +24,12 @@ class Expansion_Termica_mineral(mineral.Mineral):
         al=sum(alpha)/len(alpha)
         temp=len(list(T))-1
         temp_1=len(list(alpha))-1
+        if self.Nombre == "olivino":
+            err=((3*10**-5)-(al))/(3*10**-5)
+            print(abs(err))
         if self.Nombre == "grafito":
-            err=((3e**-5)-(al))/(3e**-5)
-        print(err)
+            err=((1.12*10**-5)-(al))/(1.12*10**-5)
+            print(abs(err))
         X=np.linspace(T[0],T[temp],100)
         Y=np.linspace(alpha[1],alpha[temp_1],100)
         print(al)
